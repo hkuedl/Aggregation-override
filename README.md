@@ -1,8 +1,8 @@
-# Aggregation-bounded-rationality
+# Aggregation-Override
 
-_This work develops a flexibility-aggregation framework that incorporates the probabilistic bounded rationality of residential air-conditioning users. It derives a Gaussian approximation of aggregate power deviations, identifies bounded-rationality-aware node-level equivalent models, propagates the deviations through a distribution network, and evaluates their impact on day-ahead market clearing._
+_This work develops a flexibility-aggregation framework that incorporates the probabilistic override behaviors of residential air-conditioning users. It derives a Gaussian approximation of aggregate power deviations, identifies override-aware bus-level equivalent models, propagates the deviations through a distribution network, and evaluates their impact on day-ahead market clearing._
 
-Codes for the paper "Bounded Rationality Integrated Flexibility Aggregation of Residential Air Conditioning Loads."
+Code for the paper "Aggregation of Residential Air Conditioning Loads Under Occupant Override Behaviors".
 
 ## Requirements
 
@@ -20,7 +20,7 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 ```
 
-The scripts are CPU-compatible. The full 3,000-user workflow contains many optimization and Monte Carlo runs and can take several hours.
+The scripts are CPU-compatible. The full 3,000-user workflow contains many optimizations and Monte Carlo runs and can take several hours.
 
 ## Experiments
 
@@ -49,7 +49,7 @@ Data/
         `-- registered_node_modeling_initialization.csv
 ```
 
-`Inputs_33kV_25MW_3000_JulSep` is the registered 92-day, 3,000-user cooling-only case used by the paper. The small processed ecobee PMF is the fixed empirical input used to reproduce the bounded-rationality distribution. The registered node-model initialization prevents local-solution drift in the nonconvex Stage-2 calibration across solver platforms; the code still reruns and audits the calibration. The raw ecobee files and building-prototype data in the shared `Data` folder are retained for provenance; the registered figure pipeline starts from the prepared case, PMF, and initialization above.
+`Inputs_33kV_25MW_3000_JulSep` is the registered 92-day, 3,000-user cooling-only case used by the paper. The small processed ecobee PMF is the fixed empirical input used to reproduce the override distribution. The registered node-model initialization prevents local-solution drift in the nonconvex Stage-2 calibration across solver platforms; the code still reruns and audits the calibration. The raw ecobee files and building-prototype data in the shared `Data` folder are retained for provenance; the registered figure pipeline starts from the prepared case, PMF, and initialization above.
 
 ### Reproduction
 
